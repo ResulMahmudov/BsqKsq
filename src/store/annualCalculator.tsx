@@ -3,7 +3,6 @@ import { create } from 'zustand';
 interface InputState {
   oneAnnual: number;
   twoAnnual: number;
-  // State-i yeniləmək üçün set funksiyaları da əlavə etmək yaxşı olar
   setOneAnnual: (val: number) => void;
   setTwoAnnual: (val: number) => void;
   calculateScore: () => void;
@@ -28,6 +27,6 @@ export const annualCalculator = create<InputState>()((set, get) => ({
   calculateScore: () => {
     const { oneAnnual, twoAnnual } = get();
     const result = Number(((oneAnnual + twoAnnual) / 2).toFixed(2));
-    set({ average: result }); // Nəticəni state-ə yazırıq
+    set({ average: result }); 
   },
 }));
